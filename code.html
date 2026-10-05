@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Freddie Manyate’s technical portfolio: online learning environments, Django applications, AWS infrastructure and learning analytics."
+  >
+  <title>Code Samples | Freddie Manyate</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a class="brand" href="index.html">
+        Freddie Manyate <span>/ Portfolio</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="code.html" aria-current="page">Code Samples</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="profile.html">Profile</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dark section" id="code">
+      <div class="wrap">
+        <div class="eyebrow">Implementation evidence</div>
+        <h2>A closer look at the code.</h2>
+        <p>
+          Two Django excerpts from the Digital Content Studio Booking System.
+        </p>
+
+        <details class="code">
+          <summary>
+            01 / Access control and filtered views
+            <span>Python / Django +</span>
+          </summary>
+
+          <p>
+            Authenticated users retrieve their own bookings; group membership
+            restricts management access.
+          </p>
+          
+
+          <pre><code>from django.contrib.auth.decorators import login_required, user_passes_test
+from django.db.models import Q
+from django.shortcuts import render
+
+
+def is_manager(user):
+    return (
+        user.is_authenticated
+        and user.groups.filter(name="Managers").exists()
+    )
+
+
+@login_required
+def my_requests(request):
+    bookings = (
+        BookingRequest.objects
+        .filter(user=request.user)
+        .order_by("-date_of_use")
+    )
+
+    return render(
+        request,
+        "studio/booking/my_requests.html",
+        {"bookings": bookings},
+    )
+
+
+@login_required
+@user_passes_test(is_manager)
+def view_requests(request):
+    query = request.GET.get("q", "").strip()
+
+    filters = (
+        Q(reviewed=False)
+        &amp; ~Q(status="Cancelled")
+        &amp; ~Q(status="Rejected")
+    )
+
+    if query:
+        filters &amp;= (
+            Q(request_number__icontains=query)
+            | Q(staff_number__icontains=query)
+        )
+
+    booking_requests = (
+        BookingRequest.objects
+        .filter(filters)
+        .order_by("-date_of_use")
+    )
+
+    context = {
+        "requests": booking_requests,
+        "search_query": query,
+    }
+
+    return render(
+        request,
+        "studio/manager/view_requests.html",
+        context,
+    )</code></pre>
+        </details>
+
+        <details class="code">
+          <summary>
+            02 / Booking validation and submission
+            <span>Python / Django +</span>
+          </summary>
+
+          <p>
+            Server-side rules check dates, duration, operating hours and
+            overlapping reservations before saving.
+          </p>
+          
+
+          <pre><code>from datetime import datetime, time, timedelta
+
+from django.contrib.auth.decorators import login_required
+from django.db import transaction
+from django.shortcuts import redirect, render
+from django.utils import timezone
+
+
+def validate_booking_slot(booking):
+    if booking.time_start &gt;= booking.time_end:
+        return "Start time must be before end time."
+
+    start_dt = datetime.combine(
+        booking.date_of_use,
+        booking.time_start,
+    )
+    end_dt = datetime.combine(
+        booking.date_of_use,
+        booking.time_end,
+    )
+
+    if end_dt - start_dt &gt; timedelta(hours=1):
+        return "Bookings longer than one hour are not allowed."
+
+    if booking.date_of_use &lt; timezone.localdate():
+        return "The booking date cannot be in the past."
+
+    if booking.date_of_use.weekday() &gt;= 5:
+        return "Studios are unavailable on weekends."
+
+    closing_time = time(16, 30)
+
+    if (
+        booking.time_start &gt; closing_time
+        or booking.time_end &gt; closing_time
+    ):
+        return "Bookings may not extend beyond 16:30."
+
+    conflicting_booking = (
+        BookingRequest.objects.filter(
+            venue_required=booking.venue_required,
+            date_of_use=booking.date_of_use,
+            time_start__lt=booking.time_end,
+            time_end__gt=booking.time_start,
+        )
+        .exclude(
+            status__in=[
+                StatusChoices.CANCELLED,
+                StatusChoices.REJECTED,
+            ]
+        )
+        .exclude(pk=booking.pk)
+        .exists()
+    )
+
+    if conflicting_booking:
+        return "This venue is already booked for the selected time slot."
+
+    return None
+
+
+@login_required
+@transaction.atomic
+def make_booking(request):
+    if request.method == "POST":
+        form = BookingRequestForm(request.POST)
+
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+
+            validation_error = validate_booking_slot(booking)
+
+            context = {
+                "form": form,
+                "error_message": validation_error,
+            }
+
+            if validation_error:
+                return render(
+                    request,
+                    "studio/booking/make_booking.html",
+                    context,
+                )
+
+            booking.status = determine_initial_status(request.user)
+            booking.save()
+            form.save_m2m()
+
+            send_booking_notification(booking)
+
+            return redirect(
+                "request_detail",
+                request_number=booking.request_number,
+            )
+    else:
+        form = BookingRequestForm()
+
+    return render(
+        request,
+        "studio/booking/make_booking.html",
+        {"form": form},
+    )</code></pre>
+        </details>
+
+     
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© Freddie Manyate · Technical Portfolio</span>
+      <span>Independent portfolio prepared for a UCT CILT application.</span>
+    </div>
+  </footer>
+</body>
+</html>

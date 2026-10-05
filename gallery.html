@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Gallery & Engagement | Freddie Manyate</title>
+  <meta name="description"
+        content="Freddie Manyate’s professional events, achievements, mentorship and community engagement.">
+
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <style>
+    .gallery-intro {
+      max-width: 760px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 35px;
+    }
+
+    .gallery-item {
+      margin: 0;
+      border-bottom: 1px solid var(--line, #d6d9d8);
+      padding-bottom: 22px;
+    }
+
+    .gallery-item[hidden] {
+      display: none;
+    }
+
+    .gallery-photo {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        background: #e5e5df;
+    }
+
+    .gallery-item figcaption {
+      padding-top: 18px;
+    }
+
+    .gallery-item h3 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .gallery-item p {
+      font-size: 14px;
+      color: var(--muted, #566476);
+      margin-bottom: 0;
+    }
+
+    .gallery-note {
+      color: var(--muted, #566476);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 1000px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item h3 {
+        font-size: 23px;
+      }
+    }
+
+    @media print {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a class="brand" href="index.html">
+        Freddie Manyate <span>/ Portfolio</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="code.html">Code Samples</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="profile.html">Profile</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="section" aria-labelledby="gallery-heading">
+        <div class="gallery-intro">
+          <div class="eyebrow">Professional & community engagement</div>
+
+          <h1 id="gallery-heading">Gallery & Engagement</h1>
+
+          <p class="lead">
+            Selected moments from professional events, technical
+            competitions, mentorship and community outreach.
+          </p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter gallery">
+          <button type="button"
+                  data-gallery-filter="all"
+                  aria-pressed="true">
+            All events
+          </button>
+
+          <button type="button"
+                  data-gallery-filter="achievements"
+                  aria-pressed="false">
+            Achievements
+          </button>
+
+          <button type="button"
+                  data-gallery-filter="development"
+                  aria-pressed="false">
+            Professional development
+          </button>
+
+          <button type="button"
+                  data-gallery-filter="community"
+                  aria-pressed="false">
+            Community & mentorship
+          </button>
+        </div>
+
+        <div class="gallery-grid">
+
+          <!-- Replace the image path and adjust its description. -->
+          <figure class="gallery-item" data-gallery-category="achievements">
+            <img class="gallery-photo"
+                 src="assets/gallery/itweb2024.jpeg"
+                 alt="Freddie Manyate attending the ITWeb Security Summit in 2024"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">2024 / Cybersecurity</div>
+              <h3>ITWeb Security Summit</h3>
+              <p>
+                Team member: Best Blue Team, Best CTF Team and
+                second overall.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-category="achievements">
+            <img class="gallery-photo"
+                 src="assets/gallery/itweb-2025.jpg"
+                 alt="Freddie Manyate at the ITWeb Security Summit hackathon in 2025"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">2025 / Hackathon</div>
+              <h3>ITWeb Security Summit</h3>
+              <p>
+                Part of the winning hackathon team, applying technical
+                skills through collaborative problem-solving.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-category="achievements">
+            <img class="gallery-photo"
+                 src="assets/gallery/Top15geek2024.png"
+                 alt="Freddie Manyate at a Top 15 Young Geeks recognition event"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">2024 / Recognition</div>
+              <h3>Top 15 Young Geeks</h3>
+              <p>
+                Recognised by Geekulcha among the Top 15 Young Geeks,
+                Class of 2024.
+                <a href="https://gklink.co/young-geeks/freddie-manyate">See more</a>
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example entry: update the title, year and caption. -->
+          <figure class="gallery-item" data-gallery-category="development">
+            <img class="gallery-photo"
+                 src="assets/gallery/e_learningday.png"
+                 alt="Participants at a professional development workshop"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">Professional development</div>
+              <h3>SPU Digital Learning & Innovation Day</h3>
+              <p>
+                2026 / I organized and presented at the digital learning and innovation day at SPU, sharing insights on emerging technologies and their impact on education.
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Example entry: replace with your actual event details. -->
+          <figure class="gallery-item" data-gallery-category="community">
+            <img class="gallery-photo"
+                 src="assets/gallery/robotics.jpeg"
+                 alt="A coding outreach session facilitated by Freddie Manyate"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">Community engagement</div>
+              <h3>Coding Outreach</h3>
+              <p>
+                2024 / Bloemfontein National Science Week: Facilitated coding activities for high school learners, promoting STEM education and inspiring future technologists.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-category="community">
+            <img class="gallery-photo"
+                 src="assets/gallery/2024robotics.jpeg"
+                 alt="Freddie Manyate supporting a robotics learning activity"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">Mentorship</div>
+              <h3>Robotics Coaching</h3>
+              <p>
+                2023 - Currently / Mentoring and coaching high school learners in robotics competitions, fostering problem-solving skills and teamwork.
+              </p>
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-gallery-category="community">
+            <img class="gallery-photo"
+                 src="assets/gallery/girlcode.png"
+                 alt="Freddie Manyate supporting a robotics learning activity"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">Mentorship</div>
+              <h3>Girl Code</h3>
+              <p>
+                2024 / Mentorship and facilitation of coding activities for young women in high school, promoting diversity and inclusion in technology.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="gallery-item" data-gallery-category="community">
+            <img class="gallery-photo"
+                 src="assets/gallery/hackmentor.jpeg"
+                 alt="Freddie Manyate mentoring at a hackathon"
+                 width="1200"
+                 height="900"
+                 loading="lazy">
+
+            <figcaption>
+              <div class="eyebrow">Mentorship</div>
+              <h3>Hackathon Mentorship</h3>
+              <p>
+                2024 / Mentoring at a hackathon, providing guidance and support to participants in developing innovative solutions and enhancing their technical skills.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="gallery-note" id="gallery-count"
+           role="status" aria-live="polite">
+          Showing 6 events.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© Freddie Manyate / Technical Portfolio</span>
+      <span>Professional events and community engagement</span>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll(
+      "[data-gallery-filter]"
+    );
+
+    const galleryItems = document.querySelectorAll(
+      "[data-gallery-category]"
+    );
+
+    const galleryCount = document.getElementById("gallery-count");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.galleryFilter;
+        let visibleCount = 0;
+
+        filterButtons.forEach((otherButton) => {
+          otherButton.setAttribute(
+            "aria-pressed",
+            String(otherButton === button)
+          );
+        });
+
+        galleryItems.forEach((item) => {
+          const matches =
+            category === "all" ||
+            item.dataset.galleryCategory === category;
+
+          item.hidden = !matches;
+
+          if (matches) {
+            visibleCount++;
+          }
+        });
+
+        galleryCount.textContent =
+          `Showing ${visibleCount} ` +
+          `${visibleCount === 1 ? "event" : "events"}.`;
+      });
+    });
+  </script>
+</body>
+</html>

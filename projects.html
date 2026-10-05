@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Freddie Manyate’s technical portfolio: online learning environments, Django applications, AWS infrastructure and learning analytics."
+  >
+  <title>Projects | Freddie Manyate</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Primary">
+      <a class="brand" href="index.html">
+        Freddie Manyate <span>/ Portfolio</span>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="code.html">Code Samples</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="profile.html">Profile</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="section" id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Selected work / 01–04</div>
+            <h2>Practical systems.<br>Considered engineering.</h2>
+          </div>
+
+          <p>
+            Four case studies showing the problem, my contribution and
+            the decisions behind the implementation.
+          </p>
+        </div>
+
+        <div class="filters" aria-label="Filter projects">
+          <button type="button" data-filter="All projects" aria-pressed="true">
+            All projects
+          </button>
+          <button
+            type="button"
+            data-filter="Cloud infrastructure"
+            aria-pressed="false"
+          >
+            Cloud infrastructure
+          </button>
+          <button
+            type="button"
+            data-filter="Institutional applications"
+            aria-pressed="false"
+          >
+            Institutional applications
+          </button>
+          <button
+            type="button"
+            data-filter="Artificial intelligence"
+            aria-pressed="false"
+          >
+            Artificial intelligence
+          </button>
+        </div>
+
+        <div class="projects">
+          <article class="project" data-category="Cloud infrastructure">
+            <div class="project-top">
+              <span class="number">01</span>
+              <span class="eyebrow">Cloud infrastructure</span>
+            </div>
+
+            <h3>Moodle &amp; AWS migration</h3>
+            <p class="summary">
+              Leading the practical deployment of a Moodle environment on AWS,
+              validated through a large-module pilot.
+            </p>
+
+            <div class="evidence">
+              <a
+                class="text-link"
+                href="https://github.com/FreshDaDon/awsmoodle"
+                target="_blank"
+                rel="noopener"
+              >
+                View repository ↗
+              </a>
+              <span class="access">
+                Private repository · walkthrough on request
+              </span>
+            </div>
+
+            <details>
+              <summary>Explore case study <span>+</span></summary>
+
+              <div class="case-body">
+                <h4>Purpose and objectives</h4>
+                <p>
+                  The Moodle &amp; AWS Migration Project was initiated to
+                  transition the university’s Learning Management System (LMS)
+                  from a third-party hosting arrangement (iLite) to a self-managed
+                  cloud infrastructure on Amazon Web Services (AWS). This
+                  strategic move was aimed at enhancing system performance,
+                  ensuring data sovereignty, optimizing costs, and building
+                  internal capacity for managing cloud-based educational
+                  technologies.
+                </p>
+                <p>
+                  The project team, comprising internal ICT and CTLPD personnel
+                  supported by an AWS partner and external consultant,
+                  successfully deployed Moodle on AWS. A comprehensive pilot
+                  test was conducted involving a course with over 2,000 students,
+                  yielding highly favourable results in terms of stability,
+                  scalability, and user experience. The deployment confirmed
+                  that AWS infrastructure could meet the university’s academic
+                  and operational demands.
+                </p>
+                <p>
+                  Following the successful pilot, the project was paused at
+                  institutional level. The AWS instance was decommissioned to
+                  avoid ongoing hosting costs; configurations, documentation
+                  and performance benchmarks were preserved.
+                </p>
+
+                <h4>Key functionality</h4>
+                <p>Cloud-hosted Moodle application and database environment.</p>
+                <p>
+                  Storage and content delivery components supporting learning
+                  resources.
+                </p>
+                <p>User access, enrolment and course continuity.</p>
+                <p>
+                  Monitoring, email delivery, security controls and operational
+                  support.
+                </p>
+                <p>
+                  Testing and issue resolution across the migrated environment.
+                </p>
+
+                <h4>My responsibilities and contribution</h4>
+                <p>
+                  I led the practical deployment of the Moodle instance on AWS
+                  and coordinated the technical activities required to progress
+                  from the existing Moodle image and repository to a functioning
+                  cloud-hosted environment. My responsibilities included
+                  identifying deployment barriers, communicating technical and
+                  training requirements to management, completing targeted AWS
+                  training, applying the acquired knowledge during deployment
+                  and supporting the SCOR pilot. Where specialist input was
+                  required, I sought appropriate assistance while retaining
+                  responsibility for applying the guidance, resolving
+                  implementation issues and validating the resulting environment.
+                </p>
+
+                <h4>Technical and architectural decisions</h4>
+                <p>
+                  Separation of application, database, storage and delivery
+                  responsibilities within the AWS architecture.
+                </p>
+                <p>
+                  Use of managed or monitored components to improve reliability
+                  and operational visibility.
+                </p>
+                <p>
+                  Consideration of access control, backups, logging, performance
+                  and continuity during migration.
+                </p>
+                <p>
+                  Anonymisation of infrastructure details in this portfolio to
+                  protect institutional security.
+                </p>
+
+                <h4>Challenges and achievements</h4>
+                <p>
+                  As the only team member with software development experience,
+                  I assumed primary responsibility for the technical
+                  implementation of the Moodle deployment. Although I had
+                  developed foundational AWS knowledge through self-directed
+                  learning, I identified specific gaps in my ability to configure
+                  and deploy the full environment. I communicated these
+                  development needs to my manager and motivated for formal
+                  training. This resulted in my attendance at Mecer Inter-Ed
+                  online AWS courses, where I strengthened my practical
+                  understanding of AWS infrastructure and deployment.
+                </p>
+                <p>
+                  Following the training, I successfully deployed the Moodle
+                  instance on AWS, applying the knowledge gained to resolve the
+                  earlier deployment challenges. The team validated the
+                  environment by piloting it with the Core Curriculum module,
+                  SCOR, which had the largest student enrolment and therefore
+                  provided an appropriate high-demand test case. The pilot was
+                  completed successfully, demonstrating that the deployed
+                  environment could support a large module and its associated
+                  users, learning resources and activities. This achievement
+                  reflects my ability to identify technical limitations,
+                  communicate resource requirements, undertake targeted
+                  professional development and apply new knowledge to deliver
+                  a functioning institutional solution.
+                </p>
+
+                <h4>Core technologies</h4>
+                <p>
+                  Moodle, AWS EC2, RDS PostgreSQL, S3 or EFS, CloudFront,
+                  Application Load Balancer, VPC, autoscaling, CloudWatch,
+                  SES and WAF.
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project" data-category="Institutional applications">
+            <div class="project-top">
+              <span class="number">02</span>
+              <span class="eyebrow">Institutional applications</span>
+            </div>
+
+            <h3>Tutor Request System</h3>
+            <p class="summary">
+              Turning a manual tutor-request process into a structured,
+              auditable Django workflow.
+            </p>
+
+            <div class="evidence">
+              <a
+                class="text-link"
+                href="https://github.com/FreshDaDon/tutor_request_portal"
+                target="_blank"
+                rel="noopener"
+              >
+                View repository ↗
+              </a>
+              <span class="access">Live walkthrough available</span>
+            </div>
+
+            <details>
+              <summary>Explore case study <span>+</span></summary>
+
+              <div class="case-body">
+                <h4>Purpose and objectives</h4>
+                <p>
+                  The Tutor Request System was developed to replace a largely
+                  manual process for requesting and administering tutors. The
+                  previous process depended on documents, emails and separate
+                  records, which made it difficult to monitor request progress,
+                  maintain consistent information and provide stakeholders with
+                  a reliable view of outstanding and completed requests.
+                </p>
+                <p>
+                  The objective was to create a centralised, database-backed
+                  application through which authorised users could submit tutor
+                  requests, review the information provided, move requests through
+                  defined approval stages and maintain an auditable record of
+                  decisions.
+                </p>
+
+                <h4>Business problem addressed</h4>
+                <p>
+                  The existing process created operational challenges such as
+                  incomplete submissions, inconsistent supporting information,
+                  limited visibility of request status and difficulty
+                  consolidating records for administrative reporting. The system
+                  addressed these challenges by standardising data capture and
+                  applying a structured workflow to each request.
+                </p>
+
+                <h4>Key functionality</h4>
+                <p>Secure user authentication.</p>
+                <p>Electronic submission of tutor requests.</p>
+                <p>Structured capture of module, staffing and request information.</p>
+                <p>Server-side validation of required information.</p>
+                <p>Role-based access to system functions and records.</p>
+                <p>Controlled review and approval stages.</p>
+                <p>Request-status tracking.</p>
+                <p>Filtering and searching of submitted requests.</p>
+                <p>Administrative oversight of current and historical requests.</p>
+                <p>Notifications or status communication where applicable.</p>
+                <p>Database-backed reporting and record management.</p>
+
+                <h4>My responsibilities and contribution</h4>
+                <p>
+                  I contributed directly to the analysis, design and development
+                  of the Tutor Request System. I translated the operational
+                  requirements of the tutor-request process into a structured
+                  digital workflow and implemented the application using Django.
+                </p>
+
+                <h4>Technical and architectural decisions</h4>
+                <p>
+                  I used Django because it provides an established structure for
+                  developing secure, database-backed web applications. Its
+                  model-view-template architecture allowed me to separate the data
+                  layer, processing logic and user interface, thereby improving
+                  maintainability.
+                </p>
+                <p>
+                  The application was designed around clearly defined request
+                  statuses. A request could only move between permitted stages
+                  when the appropriate conditions were satisfied, and the user
+                  had the necessary authority. These controls were implemented on
+                  the server side so that access restrictions did not depend
+                  solely on whether an interface button was visible.
+                </p>
+                <p>
+                  Django models and the object-relational mapper were used to
+                  define the application’s data structure and manage database
+                  operations. Relationships between users, requests, modules and
+                  relevant organisational entities were represented explicitly to
+                  support accurate retrieval, filtering and reporting.
+                </p>
+                <p>
+                  Reusable forms and validation rules were used to promote
+                  consistent data capture. Where possible, business rules were
+                  placed in appropriate model, form or service-level components
+                  instead of being duplicated across templates and views.
+                </p>
+
+                <h4>Core technologies</h4>
+                <p>
+                  Python, Django, HTML, CSS, JavaScript, relational database,
+                  Django ORM, authentication, role-based access and version control.
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <article class="project" data-category="Institutional applications">
+            <div class="project-top">
+              <span class="number">03</span>
+              <span class="eyebrow">Institutional applications</span>
+            </div>
+
+            <h3>Digital Content Studio Booking</h3>
+            <p class="summary">
+              Centralising studio reservations with institutional sign-on
+              and server-side scheduling rules.
+            </p>
+
+            <div class="evidence">
+              <a
+                class="text-link"
+                href="https://github.com/FreshDaDon/venue-booking-V2"
+                target="_blank"
+                rel="noopener"
+              >
+                View repository ↗
+              </a>
+              <span class="access">
+                Private repository · walkthrough on request
+              </span>
+            </div>
+
+            <details>
+              <summary>Explore case study <span>+</span></summary>
+
+              <div class="case-body">
+                <h4>Purpose and objectives</h4>
+                <p>
+                  The Digital Content Studio Booking System was developed to
+                  provide lecturers and authorised staff with a structured method
+                  for reserving institutional facilities used to produce
+                  technology-supported learning materials.
+                </p>
+                <p>
+                  These facilities support activities such as podcast recording,
+                  lightboard presentations, video production, live streaming and
+                  other digitally mediated teaching activities. The system’s
+                  objective was to replace informal booking arrangements with a
+                  centralised application that could display availability, capture
+                  booking information and assist administrators in managing
+                  studio usage.
+                </p>
+
+                <h4>Business problem addressed</h4>
+                <p>
+                  Studio reservations previously depended on manual communication
+                  and separate records. This made it difficult to confirm
+                  availability, prevent conflicting bookings, maintain complete
+                  booking information and monitor how the facilities were being used.
+                </p>
+                <p>
+                  The system addressed these challenges by consolidating booking
+                  information within a database-backed application and applying
+                  consistent scheduling and validation rules.
+                </p>
+
+                <h4>Key functionality</h4>
+                <p>Institutional single sign-on authentication.</p>
+                <p>Selection of the required studio or facility.</p>
+                <p>Capture of the booking date and time.</p>
+                <p>Recording of the purpose of the booking.</p>
+                <p>Availability checking before confirming a reservation.</p>
+                <p>Prevention of overlapping bookings.</p>
+                <p>User access to relevant booking information.</p>
+                <p>Administrative review and management of reservations.</p>
+                <p>Booking-status tracking where applicable.</p>
+                <p>Search and filtering by date, studio, user or status.</p>
+                <p>Historical booking records for operational reporting.</p>
+
+                <h4>My responsibilities and contribution</h4>
+                <p>
+                  I contributed directly to the analysis, design and development
+                  of the Studio Booking System. I translated the operational
+                  requirements of the digital content studios into a
+                  database-backed scheduling application.
+                </p>
+                <p>My responsibilities included:</p>
+                <p>
+                  Analysing the existing booking process and identifying its
+                  limitations.
+                </p>
+                <p>
+                  Gathering requirements from the staff responsible for operating
+                  the studios.
+                </p>
+                <p>
+                  Defining the booking information, validation rules and
+                  administrative functions.
+                </p>
+                <p>Designing the application’s database models and relationships.</p>
+                <p>
+                  Developing the Django forms, views, templates and processing logic.
+                </p>
+                <p>Integrating institutional single sign-on.</p>
+                <p>Implementing date, time and availability validation.</p>
+                <p>Developing logic to prevent conflicting reservations.</p>
+                <p>Testing booking, cancellation and administrative user journeys.</p>
+                <p>
+                  Supporting implementation, documentation and subsequent system
+                  improvements.
+                </p>
+
+                <h4>Technical and architectural decisions</h4>
+                <p>
+                  I used Django to provide a structured development framework
+                  with integrated support for authentication, database models,
+                  forms and security controls. The application separated booking
+                  data, business rules and interface components to improve
+                  maintainability.
+                </p>
+                <p>
+                  The booking record was designed to associate the user, facility,
+                  booking date, start time, end time, purpose and relevant status
+                  information. This structure supported availability checking,
+                  administrative filtering and historical reporting.
+                </p>
+                <p>
+                  Conflict prevention was implemented as a server-side business
+                  rule. Before saving a reservation, the system checked whether
+                  another active booking occupied an overlapping period for the
+                  selected facility. This ensured that conflicting reservations
+                  could not be created by bypassing interface-level restrictions.
+                </p>
+                <p>
+                  The availability logic treated two bookings as overlapping
+                  when the proposed start time occurred before an existing
+                  booking’s end time and the proposed end time occurred after
+                  the existing booking’s start time.
+                </p>
+
+                <h4>Core technologies</h4>
+              </div>
+            </details>
+          </article>
+
+          <article class="project" data-category="Artificial intelligence">
+            <div class="project-top">
+              <span class="number">04</span>
+              <span class="eyebrow">Artificial intelligence</span>
+            </div>
+
+            <h3>Maarifa AI Student Services</h3>
+            <p class="summary">
+              Providing source-grounded student support through
+              Retrieval-Augmented Generation.
+            </p>
+
+            <div class="evidence">
+              <span class="access">
+                Architecture and approach documented below
+              </span>
+            </div>
+
+            <details>
+              <summary>Explore case study <span>+</span></summary>
+
+              <div class="case-body">
+                <p>
+                  Problem and purpose: Student-service channels experience
+                  increased demand during admissions, registration and examination
+                  periods. This can result in delayed responses, repeated enquiries
+                  and inconsistent information. I developed Maarifa AI to provide
+                  a scalable self-service channel through which students could
+                  access approved institutional information.
+                </p>
+                <p>
+                  My contribution: I conceptualised and developed the Maarifa AI
+                  solution, including its application architecture, conversational
+                  workflow and retrieval-based response process. I structured
+                  institutional information for retrieval, implemented the
+                  connection between the user interface and AI service, and
+                  developed controls intended to keep responses within the approved
+                  knowledge base. I also considered privacy, access control,
+                  response quality, escalation and future institutional integration
+                  requirements.
+                </p>
+
+                <p>Key functionality:</p>
+                <p>Conversational student-support interface.</p>
+                <p>
+                  Retrieval-Augmented Generation using approved institutional
+                  information.
+                </p>
+                <p>Retrieval of relevant content before generating a response.</p>
+                <p>Source-grounded answers rather than unrestricted model responses.</p>
+                <p>Handling of unsupported or out-of-scope questions.</p>
+                <p>Conversation and query processing.</p>
+                <p>
+                  Modular architecture supporting future institutional integrations.
+                </p>
+                <p>
+                  Provision for human escalation when a query cannot be answered
+                  reliably.
+                </p>
+                <p>
+                  Design consideration for portal, Moodle and other communication
+                  channels.
+                </p>
+
+                <p>
+                  Technical and architectural decisions: I adopted a
+                  Retrieval-Augmented Generation approach because student-services
+                  responses needed to be grounded in authoritative institutional
+                  information. The solution separated the user interface,
+                  application or orchestration logic, retrieval process and
+                  language-model interaction. This modular structure supported
+                  maintainability and made it possible to update the knowledge base
+                  without retraining the language model.
+                </p>
+                <p>
+                  Security and privacy: The project was designed with POPIA
+                  considerations, data minimisation and controlled access in mind.
+                  The initial solution prioritised general institutional information
+                  and avoided unnecessary processing of personally identifiable
+                  information.
+                </p>
+                <p>
+                  Technologies: Artificial intelligence, Retrieval-Augmented
+                  Generation, large language models, Python, web application
+                  development, API integration, document retrieval, prompt
+                  engineering, information security and POPIA-aware solution design.
+                </p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="eyebrow">Additional development</div>
+        <h2>Beyond the core case studies.</h2>
+
+        <div class="additional">
+          <div>
+            <h3>Inventory Management</h3>
+            <p>
+              Database-backed asset records, categorisation, assignments,
+              status monitoring and administrative reporting.
+            </p>
+          </div>
+
+          <div>
+            <h3>Exemption Applications</h3>
+            <p>
+              Structured application capture, supporting documents,
+              role-based decisions and workflow status tracking.
+            </p>
+          </div>
+
+          <div>
+            <h3>SPU Shop</h3>
+            <p>
+              Institutional product listings, availability, administrative tools
+              and user-facing shopping functions.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© Freddie Manyate · Technical Portfolio</span>
+      <span>Independent portfolio prepared for a UCT CILT application.</span>
+    </div>
+  </footer>
+</body>
+</html>
