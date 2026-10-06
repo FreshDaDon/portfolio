@@ -230,6 +230,65 @@ def make_booking(request):
     )</code></pre>
         </details>
 
+        <details class="code">
+  <summary>
+    03 / Moodle monthly assessment activity
+    <span>MariaDB · Moodle reporting</span>
+  </summary>
+
+    <p>
+      This anonymised excerpt identifies the number of Moodle assignments and
+      quizzes created in each module during a defined reporting month. I used
+      this type of query when extracting data for monthly faculty reports and
+      Power BI dashboards.
+    </p>
+
+    <pre><code>SELECT
+    c.shortname AS module_code,
+    COUNT(DISTINCT cm.id) AS assessments_created
+FROM mdl_course AS c
+JOIN mdl_course_modules AS cm
+    ON cm.course = c.id
+JOIN mdl_modules AS m
+    ON m.id = cm.module
+WHERE m.name IN ('assign', 'quiz')
+  AND FROM_UNIXTIME(cm.added) &gt;= '2026-09-01'
+  AND FROM_UNIXTIME(cm.added) &lt;  '2026-10-01'
+GROUP BY c.shortname
+ORDER BY assessments_created DESC;</code></pre>
+
+    <h4>Purpose</h4>
+    <p>
+      The query measures assessment-development activity within a defined
+      monthly reporting period. The exclusive upper boundary prevents
+      activities created during the following month from being included.
+    </p>
+
+    <h4>Design decisions</h4>
+    <p>
+      Moodle stores activity creation dates as Unix timestamps.
+      MariaDB’s <code>FROM_UNIXTIME()</code> function converts each value into
+      a date and time that can be filtered. The query joins
+      <code>mdl_modules</code> to include only assignments and quizzes, while
+      <code>COUNT(DISTINCT cm.id)</code> prevents duplicate activity records
+      from inflating the totals.
+    </p>
+
+    <h4>Security and privacy</h4>
+    <p>
+      The production query was executed using read-only reporting access.
+      This anonymised excerpt returns aggregated module-level information and
+      excludes student names, student numbers, grades and other personal data.
+    </p>
+
+    <h4>Reporting application</h4>
+    <p>
+      The extracted results were transformed and incorporated into Power BI
+      to support monthly faculty-level analysis of Moodle assessment activity.
+    </p>
+  </div>
+</details>
+
      
       </div>
     </section>
